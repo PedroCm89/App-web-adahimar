@@ -1,0 +1,45 @@
+
+<header class="bg-gray-800 text-white" (click)="closeDropdown($event)">
+  <div class="container mx-auto px-4 py-8 flex justify-between items-center">
+    <h1 class="text-3xl font-bold">Adahimar</h1>
+    <div class="relative dropdown-container">
+      <button
+        (click)="toggleDropdown($event)"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+      >
+        Menú
+      </button>
+      <div
+        *ngIf="isDropdownOpen"
+        class="absolute right-0 mt-2 z-10 bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-200"
+      >
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+          <li>
+            <a
+              routerLink="/home"
+              (click)="closeDropdown($event)"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/information"
+              (click)="closeDropdown($event)"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+              >Información</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/contact-page"
+              (click)="closeDropdown($event)"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
