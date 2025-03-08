@@ -1,15 +1,21 @@
 
-<header class="bg-gray-800 text-white" (click)="closeDropdown($event)">
+<header class="bg-primary text-white" (click)="closeDropdown($event)">
   <div class="container mx-auto px-4 py-8 flex justify-between items-center">
     <h1 class="text-3xl font-bold">Adahimar</h1>
     <div class="relative dropdown-container">
-      <button
+            <!-- Enlaces de navegación -->
+            <div class="flex space-x-4">
+              <a routerLink="/home" class="hover:text-white transition-colors">Inicio</a>
+              <a routerLink="/information" class="hover:text-white transition-colors">Información</a>
+              <a routerLink="/contact-page" class="hover:text-white transition-colors">Contacto</a>
+            </div>
+      <!--<button
         (click)="toggleDropdown($event)"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
       >
         Menú
-      </button>
-      <div
+      </button>-->
+      <!--<div
         *ngIf="isDropdownOpen"
         class="absolute right-0 mt-2 z-10 bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-200"
       >
@@ -39,7 +45,7 @@
             >
           </li>
         </ul>
-      </div>
+      </div>-->
     </div>
   </div>
 </header>
