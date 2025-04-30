@@ -1,3 +1,10 @@
 #!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-echo "✔️ Husky pre-commit hook is working!"
+echo "🔍 Ejecutando pre-commit hook..."
+
+# Formatea los archivos staged automáticamente
+npx prettier --write .
+
+# Lint para detectar errores de estilo/estructura
+npm run lint
