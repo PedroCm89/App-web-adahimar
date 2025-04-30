@@ -1,0 +1,33 @@
+<div class="flex justify-center items-center min-h-screen">
+  <div class="w-2/3 bg-white p-8 rounded-lg shadow-lg">
+    <form #contactForm = "ngForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-700">Nombre:</label>
+        <input type="text" id="name" formControlName="name" class="w-full p-2 border border-gray-300 rounded-lg" required>
+        <div *ngIf="contactForm.get('name').invalid && contactForm.get('name').touched" class="text-red-500 text-sm">
+          El nombre es obligatorio.
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700">Correo Electrónico:</label>
+        <input type="email" id="email" formControlName="email" class="w-full p-2 border border-gray-300 rounded-lg" required>
+        <div *ngIf="contactForm.get('email').invalid && contactForm.get('email').touched" class="text-red-500 text-sm">
+          El correo es obligatorio y debe ser válido.
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="message" class="block text-gray-700">Mensaje:</label>
+        <textarea id="message" formControlName="message" class="w-full p-2 border border-gray-300 rounded-lg" rows="4" required></textarea>
+        <div *ngIf="contactForm.get('message').invalid && contactForm.get('message').touched" class="text-red-500 text-sm">
+          El mensaje es obligatorio.
+        </div>
+      </div>
+
+      <button type="submit" class="px-4 py-2 bg-primary text-white rounded-lg ml-auto block" [disabled]="contactForm.invalid">
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>
