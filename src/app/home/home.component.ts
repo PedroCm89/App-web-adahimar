@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ContactFormComponent } from "../contact-form/contact-form.component";
+//import { ContactFormComponent } from "../contact-form/contact-form.component";
 
 @Component({
   selector: 'app-home',
-  imports: [ContactFormComponent],
+  //imports: [ContactFormComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

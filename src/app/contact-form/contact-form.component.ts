@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-contact-form',
   imports: [FormsModule, CommonModule],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.css'
+  styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent {
   contactForm: FormGroup;
