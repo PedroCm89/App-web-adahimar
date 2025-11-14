@@ -9,24 +9,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  isDropdownOpen = false;
+  public isMenuOpen = false;
 
-  /**
-   * Alterna la visibilidad del menú desplegable.
-   * Se utiliza event.stopPropagation() para evitar que el clic se propague al contenedor.
-   */
-  toggleDropdown(event: Event): void {
-    event.stopPropagation();
-    this.isDropdownOpen = !this.isDropdownOpen;
-  }
-
-  /**
-   * Cierra el menú si se hace clic fuera del contenedor del dropdown.
-   */
-  closeDropdown(event: Event): void {
-    const targetElement = event.target as HTMLElement;
-    if (!targetElement.closest('.dropdown-container')) {
-      this.isDropdownOpen = false;
-    }
+  public toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+    console.log('Menu state:', this.isMenuOpen);
   }
 }

@@ -1,15 +1,24 @@
-<header class="bg-blue-500 text-white p-4 flex justify-between items-center">
+<header class="bg-blue-500 text-white h-20 flex justify-between items-center px-4">
   <div class="logo">
     <img src="logo.png" alt="Logo" class="h-8">
   </div>
-  <nav class="hidden md:flex space-x-4">
-    <a href="#" class="hover:underline">Inicio</a>
-    <a href="#" class="hover:underline">Nosotros</a>
-    <a href="#" class="hover:underline">Contacto</a>
-  </nav>
-  <button class="md:hidden text-white">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-    </svg>
+
+  <button
+    class="md:hidden text-white"
+    aria-label="Abrir menú de navegación"
+    (click)="toggleMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
   </button>
+
+ <nav class="fixed top-0 left-0 w-full h-screen bg-blue-500 z-10 p-4 transition-transform duration-300 ease-in-out transform
+             md:relative md:flex md:w-auto md:h-full md:bg-transparent md:translate-x-0 md:transform-none"
+        [ngClass]="{'translate-x-0': isMenuOpen,'-translate-x-full': !isMenuOpen }">
+        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-20 md:mt-0 list-none p-0 m-0">
+            <li><a routerLink="/" class="hover:underline text-xl md:text-base block">Inicio</a></li>
+            <li><a routerLink="/nosotros" class="hover:underline text-xl md:text-base block">Nosotros</a></li>
+            <li><a routerLink="/contacto" class="hover:underline text-xl md:text-base block">Contacto</a></li>
+        </ul>
+    </nav>
 </header>
