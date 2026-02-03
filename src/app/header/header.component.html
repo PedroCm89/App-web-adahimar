@@ -1,6 +1,6 @@
-<header class="bg-blue-500 text-white h-20 flex justify-between items-center px-4">
-  <div class="logo">
-    <img src="logo.png" alt="Logo" class="h-8">
+<header class="bg-blue-500 text-white min-h-32 flex justify-between items-center px-6">
+  <div class="logo ">
+    <img src="logo.png" alt="Logo" class="h-16 w-auto">
   </div>
 
   <button
@@ -12,13 +12,31 @@
       </svg>
   </button>
 
- <nav class="fixed top-0 left-0 w-full h-screen bg-blue-500 z-10 p-4 transition-transform duration-300 ease-in-out transform
-             md:relative md:flex md:w-auto md:h-full md:bg-transparent md:translate-x-0 md:transform-none"
-        [ngClass]="{'translate-x-0': isMenuOpen,'-translate-x-full': !isMenuOpen }">
-        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-20 md:mt-0 list-none p-0 m-0">
-            <li><a routerLink="/" class="hover:underline text-xl md:text-base block">Inicio</a></li>
-            <li><a routerLink="/nosotros" class="hover:underline text-xl md:text-base block">Nosotros</a></li>
-            <li><a routerLink="/contacto" class="hover:underline text-xl md:text-base block">Contacto</a></li>
-        </ul>
-    </nav>
+<nav class="fixed top-0 left-0 w-full h-screen bg-blue-500 z-50 transition-transform duration-300 ease-in-out
+            md:static md:w-auto md:h-auto md:bg-transparent md:translate-x-0"
+     [class.-translate-x-full]="!isMenuOpen && !isDesktop()">
+
+  <button (click)="toggleMenu()" class="md:hidden absolute top-10 right-6 text-white text-4xl">&times;</button>
+
+  <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 mt-20 md:mt-0 p-6 md:p-0">
+    <li>
+      <a routerLink="/home"
+         routerLinkActive="text-yellow-300 font-bold"
+         (click)="closeMenu()"
+         class="hover:underline text-xl md:text-base">Inicio</a>
+    </li>
+    <li>
+      <a routerLink="/nosotros"
+         routerLinkActive="text-yellow-300 font-bold"
+         (click)="closeMenu()"
+         class="hover:underline text-xl md:text-base">Nosotros</a>
+    </li>
+    <li>
+      <a routerLink="/contacto"
+         routerLinkActive="text-yellow-300 font-bold"
+         (click)="closeMenu()"
+         class="hover:underline text-xl md:text-base">Contacto</a>
+    </li>
+  </ul>
+</nav>
 </header>
