@@ -80,31 +80,78 @@
       <div class="w-16 h-1 bg-tertiary mx-auto mt-4"></div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all border-b-4 border-primary group">
-        <div class="w-16 h-16 bg-blue-50 text-primary rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">
-          <i class="uil uil-users-alt"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-neutral mb-4">Apoyo Familiar</h3>
-        <p class="text-neutral/70">Asesoramiento directo y grupos de ayuda para familias que conviven con el TDAH.</p>
-      </div>
+<div class="grid md:grid-cols-3 gap-10 items-start">
 
-      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all border-b-4 border-tertiary group">
-        <div class="w-16 h-16 bg-orange-50 text-tertiary rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">
-          <i class="uil uil-brain"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-neutral mb-4">Talleres</h3>
-        <p class="text-neutral/70">Actividades psicoeducativas adaptadas para potenciar el desarrollo integral.</p>
+  <div (click)="toggleTab(1)"
+    (keydown.enter)="toggleTab(1)"
+       role="button"
+       tabindex="0"
+       class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border-b-4 border-primary cursor-pointer group">
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-14 h-14 bg-blue-50 text-primary rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+        <i class="uil uil-users-alt"></i>
       </div>
-
-      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all border-b-4 border-secondary group">
-        <div class="w-16 h-16 bg-yellow-50 text-yellow-600 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">
-          <i class="uil uil-megaphone"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-neutral mb-4">Sensibilización</h3>
-        <p class="text-neutral/70">Charlas y formación en centros educativos para una inclusión real y efectiva.</p>
-      </div>
+      <i class="uil uil-angle-down text-2xl transition-transform duration-300"
+         [class.rotate-180]="activeTab === 1"></i>
     </div>
+    <h3 class="text-2xl font-bold text-neutral mb-2">Apoyo Familiar</h3>
+
+    <div class="overflow-hidden transition-all duration-500 ease-in-out"
+         [style.max-height]="activeTab === 1 ? '500px' : '0px'"
+         [style.opacity]="activeTab === 1 ? '1' : '0'">
+      <p class="text-neutral/80 pt-4 border-t border-gray-100 leading-relaxed">
+        Ofrecemos un espacio de escucha y herramientas prácticas para la convivencia diaria. Entendemos que el diagnóstico no solo afecta al individuo, sino a todo el núcleo familiar. Por ello, facilitamos grupos de apoyo donde compartir experiencias y estrategias de resiliencia emocional, ayudando a los padres a gestionar el día a día con seguridad y comprensión.
+      </p>
+    </div>
+  </div>
+
+  <div (click)="toggleTab(2)"
+  (keydown.enter)="toggleTab(1)"
+       role="button"
+       tabindex="0"
+       class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border-b-4 border-tertiary cursor-pointer group">
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-14 h-14 bg-orange-50 text-tertiary rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+        <i class="uil uil-brain"></i>
+      </div>
+      <i class="uil uil-angle-down text-2xl transition-transform duration-300"
+         [class.rotate-180]="activeTab === 2"></i>
+    </div>
+    <h3 class="text-2xl font-bold text-neutral mb-2">Talleres</h3>
+
+    <div class="overflow-hidden transition-all duration-500 ease-in-out"
+         [style.max-height]="activeTab === 2 ? '500px' : '0px'"
+         [style.opacity]="activeTab === 2 ? '1' : '0'">
+      <p class="text-neutral/80 pt-4 border-t border-gray-100 leading-relaxed">
+        Nuestros programas están diseñados por especialistas para potenciar las capacidades cognitivas, emocionales y sociales. Desde refuerzo psicopedagógico hasta talleres de funciones ejecutivas y habilidades sociales, adaptamos cada actividad a la etapa del ciclo vital, fomentando la autonomía y la autoestima de cada participante en un entorno seguro.
+      </p>
+    </div>
+  </div>
+
+  <div (click)="toggleTab(3)"
+  (keydown.enter)="toggleTab(1)"
+       role="button"
+       tabindex="0"
+       class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border-b-4 border-secondary cursor-pointer group">
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-14 h-14 bg-yellow-50 text-yellow-600 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">
+        <i class="uil uil-megaphone"></i>
+      </div>
+      <i class="uil uil-angle-down text-2xl transition-transform duration-300"
+         [class.rotate-180]="activeTab === 3"></i>
+    </div>
+    <h3 class="text-2xl font-bold text-neutral mb-2">Sensibilización</h3>
+
+    <div class="overflow-hidden transition-all duration-500 ease-in-out"
+         [style.max-height]="activeTab === 3 ? '500px' : '0px'"
+         [style.opacity]="activeTab === 3 ? '1' : '0'">
+      <p class="text-neutral/80 pt-4 border-t border-gray-100 leading-relaxed">
+        Trabajamos por una inclusión real en todos los ámbitos de la sociedad. Colaboramos estrechamente con centros educativos impartiendo charlas y formación técnica para profesores y alumnos. El objetivo es eliminar el estigma social y crear entornos escolares y sociales donde la neurodiversidad sea comprendida como una oportunidad de aprendizaje para todos.
+      </p>
+    </div>
+  </div>
+
+</div>
   </div>
 </div>
 

@@ -8,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  // 0 significa que todos están cerrados
+  activeTab = 0;
+
+  // Método para abrir/cerrar
+  toggleTab(tabIndex: number): void {
+    if (this.activeTab === tabIndex) {
+      this.activeTab = 0; // Si hago clic en el que ya está abierto, lo cierro
+    } else {
+      this.activeTab = tabIndex; // Si no, abro el nuevo
+    }
+  }
 
 }
