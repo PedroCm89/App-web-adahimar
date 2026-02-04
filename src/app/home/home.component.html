@@ -106,7 +106,7 @@
   </div>
 
   <div (click)="toggleTab(2)"
-  (keydown.enter)="toggleTab(1)"
+  (keydown.enter)="toggleTab(2)"
        role="button"
        tabindex="0"
        class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border-b-4 border-tertiary cursor-pointer group">
@@ -129,7 +129,7 @@
   </div>
 
   <div (click)="toggleTab(3)"
-  (keydown.enter)="toggleTab(1)"
+  (keydown.enter)="toggleTab(3)"
        role="button"
        tabindex="0"
        class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border-b-4 border-secondary cursor-pointer group">
@@ -184,12 +184,17 @@
     <h3 class="text-3xl md:text-5xl font-serif font-bold mb-6">¿Quieres formar parte de nuestra comunidad?</h3>
     <p class="text-xl mb-10 opacity-90">Estamos aquí para escucharte y caminar a tu lado.</p>
     <div class="flex flex-wrap justify-center gap-4">
-      <a routerLink="/contacto" class="px-10 py-4 bg-white text-tertiary font-bold rounded-full hover:bg-secondary hover:text-neutral transition-all shadow-xl">
-        Contactar ahora
-      </a>
-      <a routerLink="/talleres" class="px-10 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-tertiary transition-all">
-        Ver Talleres
-      </a>
+<a routerLink="/nosotros"
+   class="group w-64 h-48 bg-primary flex flex-col items-center justify-center text-center p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110">
+  <span class="text-white font-bold text-2xl uppercase tracking-wider">Conócenos</span>
+  <div class="w-12 h-1 bg-secondary mt-2 group-hover:w-20 transition-all"></div>
+</a>
+
+<a routerLink="/talleres"
+   class="group w-64 h-48 bg-tertiary flex flex-col items-center justify-center text-center p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110">
+  <span class="text-white font-bold text-2xl uppercase tracking-wider">Talleres</span>
+  <div class="w-12 h-1 bg-secondary mt-2 group-hover:w-20 transition-all"></div>
+</a>
     </div>
   </div>
 </div>

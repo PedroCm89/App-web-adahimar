@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 //import { ContactFormComponent } from "../contact-form/contact-form.component";
-
+import { CommonModule } from '@angular/common'; // Para el [class] y [style]
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home',
-  //imports: [ContactFormComponent],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
