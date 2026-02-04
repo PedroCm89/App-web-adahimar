@@ -22,14 +22,28 @@ export class ContactFormComponent {
   }
 
   // Método para manejar el envío del formulario
-  onSubmit() {
-    if (this.contactForm.valid) {
-      // Simulación del envío del formulario
-      console.log('Formulario enviado con éxito:', this.contactForm.value);
-      alert('Mensaje enviado con éxito');
-      this.contactForm.reset(); // Limpiar formulario después de enviar
-    } else {
-      alert('Por favor, completa todos los campos');
-    }
+onSubmit() {
+  if (this.contactForm.valid) {
+    const body = new URLSearchParams();
+    body.set('form-name', 'contact');
+    body.set('name', this.contactForm.value.name ?? '');
+    body.set('email', this.contactForm.value.email ?? '');
+    body.set('message', this.contactForm.value.message ?? '');
+
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body.toString()
+    })
+    .then(() => {
+      alert('¡Mensaje enviado con éxito a la asociación!');
+      this.contactForm.reset();
+    })
+    .catch((error) => {
+      console.error('Error de Netlify:', error);
+      alert('Hubo un error al enviar el mensaje.');
+    });
   }
+}
+
 }
