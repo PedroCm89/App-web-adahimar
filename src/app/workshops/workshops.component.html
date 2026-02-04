@@ -1,1 +1,224 @@
-<p>workshops works!</p>
+<div class="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
+  <img
+    src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg"
+    alt="Talleres Adahimar"
+    class="w-full h-full object-cover animate__animated animate__fadeIn"
+  />
+  <div class="absolute inset-0 bg-primary/40 flex items-center justify-center backdrop-blur-[2px]">
+    <h1 class="text-4xl md:text-6xl font-serif font-bold text-white text-center drop-shadow-2xl">
+      Talleres y Formación
+    </h1>
+  </div>
+</div>
+
+<div class="bg-secondary/10 border-b border-secondary/20 py-8 px-4">
+  <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+    <div class="bg-secondary p-3 rounded-full text-neutral shadow-sm">
+      <i class="uil uil-star text-2xl"></i>
+    </div>
+    <div>
+      <p class="text-neutral font-bold text-lg">Beneficio exclusivo para socios</p>
+      <p class="text-neutral/70">Todos nuestros talleres son gratuitos. La apertura de grupos depende de la demanda y disponibilidad.</p>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-5xl mx-auto px-6 py-16 font-sans">
+
+  <section class="mb-20">
+    <div class="flex items-center mb-10 border-b-2 border-primary/10 pb-4">
+      <i class="uil uil-user-circle text-4xl text-primary mr-4"></i>
+      <h2 class="text-3xl font-serif font-bold text-neutral">Bienestar y Vida Adulta</h2>
+    </div>
+
+    <div class="grid gap-4">
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('lectura')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Club de Lectura Adultos</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'lectura'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'lectura' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Encuentros quincenales para disfrutar de la lectura compartida y el debate enriquecedor entre adultos.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('vida-adulta')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">TDAH Vida Adulta</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'vida-adulta'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'vida-adulta' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Estrategias y apoyo para gestionar los retos del TDAH en el ámbito laboral y personal del adulto.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('pareja')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">TDAH de mi pareja y yo</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'pareja'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'pareja' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Espacio de orientación para parejas donde uno o ambos miembros conviven con el diagnóstico.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('digitales')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Herramientas Digitales</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'digitales'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'digitales' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Dominio de apps y software para mejorar la organización y la productividad diaria.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('rol')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Juegos de Rol Adultos</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'rol'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'rol' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Fomento de habilidades sociales y creatividad a través de la narrativa lúdica.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('meditacion')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Iniciación a la Meditación</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'meditacion'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'meditacion' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Prácticas guiadas para la gestión del estrés y la mejora del foco atencional.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('nutricion')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Nutrición Saludable</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'nutricion'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'nutricion' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Pautas alimenticias para mejorar el bienestar general y el rendimiento cognitivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-20">
+    <div class="flex items-center mb-10 border-b-2 border-tertiary/10 pb-4">
+      <i class="uil uil-graduation-cap text-4xl text-tertiary mr-4"></i>
+      <h2 class="text-3xl font-serif font-bold text-neutral">Desarrollo Infanto-Juvenil</h2>
+    </div>
+
+    <div class="grid gap-4">
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('funciones')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Funciones Ejecutivas</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'funciones'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'funciones' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Entrenamiento en planificación, memoria de trabajo e inhibición de impulsos.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('redaccion')" class="w-full flex items-center justify-between p-6 bg-white">
+          <div class="text-left">
+            <span class="text-lg font-bold text-neutral block">Redacción Creativa (Primaria)</span>
+            <span class="text-xs font-bold text-primary uppercase">Marbella • San Pedro</span>
+          </div>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'redaccion'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'redaccion' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Mejora de la expresión escrita y la creatividad para los más pequeños en nuestras dos sedes.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('estudio')" class="w-full flex items-center justify-between p-6 bg-white">
+          <div class="text-left">
+            <span class="text-lg font-bold text-neutral block">Técnicas de Estudio (ESO)</span>
+            <span class="text-xs font-bold text-primary uppercase">Marbella • San Pedro</span>
+          </div>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'estudio'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'estudio' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Métodos efectivos de estudio y organización adaptados al nivel de secundaria.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('habilidades')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Habilidades Sociales e Inteligencia Emocional</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'habilidades'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'habilidades' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Gestión de emociones y mejora de la interacción con el entorno social y escolar.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('lectoescritura')" class="w-full flex items-center justify-between p-6 bg-white">
+          <div class="text-left">
+            <span class="text-lg font-bold text-neutral block">Lectoescritura (Primaria)</span>
+            <span class="text-xs font-bold text-primary uppercase">Marbella • San Pedro</span>
+          </div>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'lectoescritura'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'lectoescritura' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Refuerzo de los procesos básicos de lectura y escritura para primaria en ambas sedes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="flex items-center mb-10 border-b-2 border-secondary/20 pb-4">
+      <i class="uil uil-users-alt text-4xl text-secondary mr-4"></i>
+      <h2 class="text-3xl font-serif font-bold text-neutral">Formación y Comunidad</h2>
+    </div>
+
+    <div class="grid gap-4">
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('padres')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Formación de Padres y Madres</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'padres'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'padres' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Escuela de familias para compartir pautas de crianza y manejo conductual en el hogar.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('formacion-tdah')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Formación sobre el TDAH</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'formacion-tdah'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'formacion-tdah' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Cápsulas formativas para entender la base neurobiológica y el manejo del trastorno.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button (click)="toggleWorkshop('rutas')" class="w-full flex items-center justify-between p-6 bg-white">
+          <span class="text-lg font-bold text-neutral">Rutas Adahimar</span>
+          <i class="uil uil-angle-down text-2xl transition-transform" [class.rotate-180]="activeWorkshop === 'rutas'"></i>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 bg-gray-50" [style.max-height]="activeWorkshop === 'rutas' ? '200px' : '0px'">
+          <p class="p-6 text-neutral/70 border-t border-gray-100">Quedadas de senderismo y ocio saludable para familias socias de Adahimar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="bg-primary py-20 px-6 mt-10">
+  <div class="max-w-3xl mx-auto text-center text-white">
+    <h3 class="text-3xl font-serif font-bold mb-6">¿Quieres inscribirte en algún taller?</h3>
+    <p class="text-xl mb-10 opacity-90">Ponte en contacto con nosotros para verificar la disponibilidad de plazas y próximos horarios.</p>
+    <a routerLink="/contacto" class="inline-block bg-secondary text-neutral font-bold px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-transform">
+      Consultar Disponibilidad
+    </a>
+  </div>
+</div>
