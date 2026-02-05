@@ -1,38 +1,54 @@
 <div class="container mx-auto px-4 py-12">
-  <h1 class="text-3xl font-serif font-bold text-primary mb-6">Contacto</h1>
+  <div class="text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">Estamos aquí para ayudarte</h1>
+    <div class="h-1 w-24 bg-tertiary mx-auto mb-6 rounded-full"></div>
+    <p class="text-lg font-sans text-gray-600 max-w-2xl mx-auto italic">
+      "La atención presencial requiere <strong>cita previa</strong> para poder dedicarte el tiempo que mereces."
+    </p>
+  </div>
 
-  <p class="text-lg font-sans text-gray-700 mb-8 max-w-2xl">
-    Si necesitas más información sobre nuestros servicios, asesoramiento o cualquier otra consulta,
-    no dudes en ponerte en contacto con nosotros. Estaremos encantados de ayudarte.
-    En caso de necesitar atención presencial o una cita con nuestro equipo, es necesario solicitar
-    <strong>cita previa</strong>.
-  </p>
-
-  <div class="grid gap-6 md:grid-cols-3 mb-12">
-    <a href="tel:653590729" class="bg-tertiary text-white p-6 rounded-2xl shadow-md flex items-center gap-4 font-sans hover:bg-opacity-80 transition">
-      <i class="uil uil-phone text-3xl"></i>
-      <span class="text-lg">653 590 729</span>
+  <div class="grid gap-8 md:grid-cols-3 mb-16">
+    <a href="tel:653590729"
+       class="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border-b-4 border-primary flex flex-col items-center text-center transform hover:-translate-y-2">
+      <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+        <i class="uil uil-phone text-3xl text-primary group-hover:text-white"></i>
+      </div>
+      <span class="text-sm uppercase tracking-widest text-gray-400 font-bold mb-2">Llámanos</span>
+      <span class="text-xl font-bold text-gray-800">653 590 729</span>
     </a>
 
-    <a href="mailto:adahimar_tdah@yahoo.es" class="bg-tertiary text-white p-6 rounded-2xl shadow-md flex items-center gap-4 font-sans hover:bg-opacity-80 transition">
-      <i class="uil uil-envelope-check text-3xl"></i>
-      <span class="text-lg">adahimar_tdah<span>&#64;</span>yahoo.es </span>
+    <a href="mailto:adahimar_tdah@yahoo.es"
+       class="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border-b-4 border-tertiary flex flex-col items-center text-center transform hover:-translate-y-2">
+      <div class="w-16 h-16 bg-tertiary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-tertiary transition-colors">
+        <i class="uil uil-envelope-check text-3xl text-tertiary group-hover:text-white"></i>
+      </div>
+      <span class="text-sm uppercase tracking-widest text-gray-400 font-bold mb-2">Escríbenos</span>
+      <span class="text-lg font-bold text-gray-800 break-all">adahimar_tdah<span>&#64;</span>yahoo.es</span>
     </a>
 
-    <div class="bg-tertiary text-white p-6 rounded-2xl shadow-md flex items-center gap-4 font-sans hover:bg-opacity-80 transition">
-      <i class="uil uil-map-marker text-3xl"></i>
-      <span class="text-lg">Sedes en Marbella y San Pedro</span>
+    <div class="group bg-white p-8 rounded-3xl shadow-lg border-b-4 border-primary/50 flex flex-col items-center text-center transform hover:-translate-y-2 transition-all duration-300">
+      <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+        <i class="uil uil-map-marker text-3xl text-gray-500"></i>
+      </div>
+      <span class="text-sm uppercase tracking-widest text-gray-400 font-bold mb-2">Sedes</span>
+      <span class="text-md font-bold text-gray-800">Marbella & San Pedro</span>
     </div>
   </div>
 
-  <div class="mb-12">
-    <h2 class="text-2xl font-serif font-bold text-primary mb-4">Nuestras Sedes</h2>
-    <div class="h-[450px] w-full">
+  <div class="relative mb-20">
+    <div class="absolute -top-6 -left-6 w-24 h-24 bg-tertiary/20 rounded-full -z-10 blur-2xl"></div>
+    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full -z-10 blur-2xl"></div>
+
+    <h2 class="text-2xl font-serif font-bold text-primary mb-6 flex items-center gap-2">
+      <i class="uil uil-location-point"></i> Ubicación de nuestras sedes
+    </h2>
+    <div class="h-[500px] w-full rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
       <app-map></app-map>
     </div>
   </div>
 
-  <div class="mt-12">
+  <div class="max-w-4xl mx-auto bg-gray-50 p-8 md:p-12 rounded-[2.5rem] shadow-inner border border-gray-100">
+    <h2 class="text-2xl font-serif font-bold text-primary mb-8 text-center">Envíanos un mensaje</h2>
     <app-contact-form />
   </div>
 </div>
