@@ -1,57 +1,55 @@
-<!-- footer.component.html -->
-<footer class="bg-neutral text-gray-300 py-8">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <!-- Información de la marca -->
-      <div class="mb-4 md:mb-0">
-        <h2 class="text-xxl font-serif font-bold text-white">Adahimar</h2>
-        <p class="mt-2 text-sm">© {{ currentYear }} Adahimar. Todos los derechos reservados.</p>
+<footer class="bg-neutral text-gray-300 py-10 w-full overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-gray-700 pb-8">
+
+      <div class="text-center md:text-left">
+        <h2 class="text-3xl font-serif font-bold text-white">Adahimar</h2>
+        <p class="mt-2 text-sm">© {{ currentYear }} Adahimar.<br class="md:hidden"> Todos los derechos reservados.</p>
       </div>
 
-      <!-- Logos de Asociación y Patrocinadores -->
-      <div class="flex justify-center items-center space-x-6 my-6">
-        <img src="ADAHIMAR LOGO naranja.png" alt="Logo Adahimar" class="h-16 w-auto">
-        <img src="GabCom Del Derechos Sociales H.png" alt="Logo Ayuntamiento" class="h-16 w-auto">
-        <img src="Ayudanos en naranja BLANCO.png" alt="Logo Ayuntamiento" class="h-16 w-auto">
+      <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+        <img src="ADAHIMAR LOGO naranja.png" alt="Logo Adahimar" class="h-12 md:h-16 w-auto object-contain">
+        <img src="GabCom Del Derechos Sociales H.png" alt="Logo Ayuntamiento" class="h-12 md:h-16 w-auto object-contain">
+        <img src="Ayudanos en naranja BLANCO.png" alt="Logo Ayuntamiento" class="h-12 md:h-16 w-auto object-contain">
       </div>
 
-      <!-- Redes Sociales -->
-      <div class="flex space-x-4">
-        <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank" class="text-gray-300 hover:text-white text-xl transition-colors">
-          <i [class]="social.icon"></i>
-        </a>
+      <div class="flex flex-col items-center md:items-end space-y-4">
+        <div class="flex space-x-5">
+          <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank"
+             class="text-gray-300 hover:text-white text-2xl transition-all hover:scale-110">
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+        <div class="text-sm flex flex-col items-center md:items-end space-y-2">
+          <a href="mailto:adahimar_tdah@yahoo.es" class="flex items-center gap-2 hover:text-white transition-colors">
+            <i class="uil uil-envelope-check text-lg"></i>
+            <span>adahimar_tdah<span>&#64;</span>yahoo.es</span>
+          </a>
+          <a href="tel:+34653590729" class="flex items-center gap-2 hover:text-white transition-colors">
+            <i class="uil uil-phone text-lg"></i>
+            <span>+34 653 590 729</span>
+          </a>
+        </div>
       </div>
     </div>
-          <!-- Información de contacto -->
-          <div class="flex flex-col items-center md:items-start text-sm">
-            <div class="flex items-center space-x-2">
-              <i class="uil uil-envelope-check text-lg"></i>
-              <a href="mailto:adahimar_tdah@yahoo.es" class="hover:text-white transition-colors">
-                adahimar_tdah<span>&#64;</span>yahoo.es
-              </a>
-            </div>
-            <div class="flex items-center space-x-2 mt-2">
-              <i class="uil uil-phone text-lg"></i>
-              <a href="tel:+34653590729" class="hover:text-white transition-colors">
-                +34 653 590 729
-              </a>
-            </div>
-          </div>
-    <!-- Créditos o enlaces adicionales -->
-    <div class="mt-6 border-t border-gray-700 pt-4 text-center text-sm">
-      <p>
+
+    <div class="mt-8 flex flex-col items-center space-y-6">
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs md:text-sm text-gray-400">
+        <a routerLink="/aviso-legal" class="hover:text-white transition-colors">Aviso Legal</a>
+        <a routerLink="/politica-privacidad" class="hover:text-white transition-colors">Política de Privacidad</a>
+        <a routerLink="/politica-cookies" class="hover:text-white transition-colors">Política de Cookies</a>
+        <a routerLink="/terminos-condiciones" class="hover:text-white transition-colors">Términos y Condiciones</a>
+      </div>
+
+      <div class="text-xs text-gray-500">
         Diseñado por
-        <a href="https://tu-sitio-web.com" target="_blank" class="hover:text-white transition-colors">
-          Tu Nombre
+        <a href="https://pedrocarrasco.netlify.app/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="text-tertiary hover:text-white transition-colors font-bold tracking-wide">
+           Pedro Carrasco
         </a>
-      </p>
+      </div>
     </div>
-  </div>
-  <!--enlaces legales-->
-  <div class="mt-6 border-t border-gray-700 pt-4 text-center text-sm flex flex-wrap justify-center space-x-4">
-    <a routerLink="/aviso-legal" class="hover:text-white transition-colors">Aviso Legal</a>
-    <a routerLink="/politica-privacidad" class="hover:text-white transition-colors">Política de Privacidad</a>
-    <a routerLink="/politica-cookies" class="hover:text-white transition-colors">Política de Cookies</a>
-    <a routerLink="/terminos-condiciones" class="hover:text-white transition-colors">Términos y Condiciones</a>
   </div>
 </footer>
