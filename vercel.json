@@ -3,7 +3,8 @@
     "env": {},
     "commands": {
       "install": "npm install --legacy-peer-deps",
-      "build": "ng build"
-    }
+      "build": "npm run build"
+    },
+    "outputDirectory": "dist/adahimar"
   }
 }
