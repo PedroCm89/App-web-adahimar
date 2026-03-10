@@ -1,4 +1,10 @@
 {
-  "buildCommand": "npm install --legacy-peer-deps && npm run build",
-  "outputDirectory": "dist/adahimar"
+  "build": {
+    "env": {},
+    "commands": {
+      "install": "npm install --legacy-peer-deps",
+      "build": "npm run build"
+    },
+    "outputDirectory": "dist/adahimar/browser"
+  }
 }
