@@ -1,10 +1,20 @@
 {
-  "build": {
-    "env": {},
-    "commands": {
-      "install": "npm install --legacy-peer-deps",
-      "build": "npm run build"
+  "version": 2,
+  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "builds": [
+    {
+      "src": "dist/adahimar/server/server.mjs",
+      "use": "@vercel/node"
     },
-    "outputDirectory": "dist/adahimar/browser"
-  }
+    {
+      "src": "dist/adahimar/browser/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/adahimar/server/server.mjs"
+    }
+  ]
 }
